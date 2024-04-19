@@ -16,7 +16,7 @@
       aws_secret_key: "{{aws_secret_key}}"
       rules:
         - proto: all
-          cidr_ip: {{cidr_ip}}
+          cidr_ip: "{{cidr_ip}}"
         - proto: all
           group_name: ansible
       rules_egress:
