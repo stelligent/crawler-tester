@@ -196,7 +196,7 @@ Resources:
       PolicyType: TargetTrackingScaling
       TargetTrackingConfiguration:
         CustomizedMetricSpecification:
-          Dimensions: 
+          Dimensions:
             - Name: ClusterName
               Value: !Ref EcsCluster
           MetricName: CPUReservation
@@ -213,7 +213,7 @@ Resources:
       PolicyType: TargetTrackingScaling
       TargetTrackingConfiguration:
         CustomizedMetricSpecification:
-          Dimensions: 
+          Dimensions:
             - Name: ClusterName
               Value: !Ref EcsCluster
           MetricName: MemoryReservation
@@ -228,7 +228,7 @@ Resources:
       Name: 'AWS-GatherSoftwareInventory'
       ScheduleExpression: 'rate(1 day)'
       Parameters:
-        applications: 
+        applications:
         - Enabled
         awsComponents:
         - Enabled
@@ -245,8 +245,8 @@ Resources:
         windowsUpdates:
         - Enabled
       Targets:
-      - Key: tag:aws:autoscaling:groupName	
-        Values: 
+      - Key: tag:aws:autoscaling:groupName
+        Values:
           - !Ref EcsAutoScalingGroup
   ContainerInstances:
     Condition: HasLaunchTypeEC2
